@@ -5,12 +5,13 @@ $(document).ready(() => {
         e.preventDefault();
         console.log("successful submission");
     // form answers
-        let answerOne, answerTwo, answerThree, answerFour;
+        let answerOne, answerTwo, answerThree, answerFour, answerFive;
         answerOne = $("#q1").val();
-        answerTwo = $("input:radio[name=radio]:checked").val();
+        answerTwo = $("input:radio[name=radio-1]:checked").val();
         answerThree = $("#q3").val();
         answerFour = parseInt($("#q4").val());
-        console.log(answerOne, answerTwo, answerThree, answerFour);
+        answerFive = $("input:radio[name=radio-2]:checked").val();
+        console.log(answerOne, answerTwo, answerThree, answerFour, answerFive);
     // analyze user answers
         function ansOne() {
             if (answerOne === "1") {
@@ -31,12 +32,9 @@ $(document).ready(() => {
                 return "python";
             } else if (answerTwo === "c") {
                 return "cobol";
-            } else {
-                $("#q2").after("all fields must be completed");
             }
         };
 
-        console.log(answerThree.length)
         function ansThree() {
             if (answerThree.length <= 5) {
                 return "java";
@@ -59,18 +57,41 @@ $(document).ready(() => {
             }
         }
 
-        const resultOne = ansOne();
-        const resultTwo = ansTwo();
-        const resultThree = ansThree();
-        const resultFour = ansFour();
+        function ansFive() {
+            if (answerFive === "a") {
+                return "java";
+            } else if (answerFive === "b") {
+                return "python";
+            } else if (answerFive === "c") {
+                return "cobol";
+            }            
+        };
 
-        // if (resultOne === resultTwo) {
-        //     return resultOne
-        // } else
-
+        let ansArray, counts, compare, languageResult;
+        ansArray = [ansOne(), ansTwo(), ansThree(), ansFour(), ansFive()]
+        counts = {};
+        compare = 0;
+        
+        (function(array){
+        for(let i = 0, len = array.length; i < len; i++){
+            let word = array[i];
+            
+            if(counts[word] === undefined){
+                counts[word] = 1;
+            }else{
+                counts[word] = counts[word] + 1;
+            }
+            if(counts[word] > compare){
+                    compare = counts[word];
+                    languageResult = ansArray[i];
+            }
+            }
+        return languageResult;
+        })(ansArray);        
 
         // print results
-        $("#print-results").text(`${resultOne} ${resultTwo} ${resultThree} ${resultFour}`)
+        $("#form").toggle();
+        $("#print-results").text(`${languageResult}`)
     });
 
 });
