@@ -4,15 +4,27 @@ header {
     margin: auto;
 }
 
+input {
+    background-color: rgba(205, 134, 63, 0.808);
+    border-radius: 12px;
+    box-shadow: purple;
+}
+
 .print-result {
     font-size: 10rem;
     text-align: center;
+    color: peru
+}
+
+h3 {
+    color: peru;
 }
 
 /* loader animation */
 .loader {
     display: none;
     text-align: center;
+    color: peru
 }
 .one {
     opacity: 0;
