@@ -13,13 +13,14 @@ _This web app features an interactive quiz that offers aspiring developers a cus
 * _Clone repository: "git clone https://github.com/cordenbrock/language-suggester"_
 * _Navigate to language-suggester directory from bash terminal or preferred CLI: "cd language-suggester"_
 * _Launch with default code editor: "code ."_
-* _Alternatively, view website hosted on github-pages: _
+* _Alternatively, view website hosted on github-pages: https://cordenbrock.github.io/language-suggester/_
 
 ## Built with
 
 * _HTML_
 * _CSS_
 * _Bootstrap 4_
+* _javaScript_
 * _jQuery_
 
 ### Legal
