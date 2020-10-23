@@ -15,10 +15,11 @@
         <form id="form">
             <!-- Q1 -->
             <div class="form-group">
-                <h3>Q1</h3> 
+                <h3>Q1:</h3> 
+                <label for="q1">On a scale from "totally" to "ehhh", how would you rate </label>
                 <select class="form-control" id="q1">
                     <option disabled selected value> -- select an option -- </option>
-                    <option>1</option>
+                    <option></option>
                     <option>2</option>
                     <option>3</option>
                 </select>
@@ -87,9 +88,10 @@
         </form>
     </div>
 
-    <!-- print results -->
-    <div class="container" id="print-results">
-        <div>
+    <!-- hidden results -->
+    <div class="container">
+        <h3 class="loader" id="loader">Loading<span class="one">.</span><span class="two">.</span><span class="three">.</span>​</h3>
+        <div  id="print-result">
         </div>
     </div>
 

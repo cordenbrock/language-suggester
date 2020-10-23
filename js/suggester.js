@@ -1,9 +1,10 @@
 $(document).ready(() => {
-// form submission
 
+// form submission
     $("#form").submit((e) => {
         e.preventDefault();
         console.log("successful submission");
+
     // form answers
         let answerOne, answerTwo, answerThree, answerFour, answerFive;
         answerOne = $("#q1").val();
@@ -12,6 +13,7 @@ $(document).ready(() => {
         answerFour = parseInt($("#q4").val());
         answerFive = $("input:radio[name=radio-2]:checked").val();
         console.log(answerOne, answerTwo, answerThree, answerFour, answerFive);
+
     // analyze user answers
         function ansOne() {
             if (answerOne === "1") {
@@ -67,21 +69,22 @@ $(document).ready(() => {
             }            
         };
 
+    // compile user input into one result 
         let ansArray, counts, compare, languageResult;
         ansArray = [ansOne(), ansTwo(), ansThree(), ansFour(), ansFive()]
         counts = {};
         compare = 0;
         
         (function(array){
-        for(let i = 0, len = array.length; i < len; i++){
+        for (let i = 0, len = array.length; i < len; i++) {
             let word = array[i];
             
-            if(counts[word] === undefined){
+            if (counts[word] === undefined) {
                 counts[word] = 1;
-            }else{
+            } else {
                 counts[word] = counts[word] + 1;
             }
-            if(counts[word] > compare){
+            if (counts[word] > compare) {
                     compare = counts[word];
                     languageResult = ansArray[i];
             }
@@ -89,9 +92,13 @@ $(document).ready(() => {
         return languageResult;
         })(ansArray);        
 
-        // print results
+    // print result
         $("#form").toggle();
-        $("#print-results").text(`${languageResult}`)
+        $(".loader").fadeIn(5000).fadeOut(5000, "swing", printResults);
+        function printResults() {
+            $("#print-result").text(`${languageResult}!`)
+        }
+
     });
 
 });
