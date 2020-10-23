@@ -94,8 +94,8 @@ $(document).ready(() => {
 
     // print result
         $("#form").toggle();
-        $(".loader").fadeIn(5000).fadeOut(5000, "swing", printResults);
-        function printResults() {
+        $("#loader").fadeIn(5000).fadeOut(5000, "swing", printResult);
+        function printResult() {
             $("#print-result").text(`${languageResult}!`)
         }
 

@@ -1,9 +1,19 @@
-
-
-.loader {
-    display: none;
+header {
+    text-align: center;
+    padding: 3rem;
+    margin: auto;
 }
 
+.print-result {
+    font-size: 10rem;
+    text-align: center;
+}
+
+/* loader animation */
+.loader {
+    display: none;
+    text-align: center;
+}
 .one {
     opacity: 0;
     -webkit-animation: dot 1.3s infinite;
@@ -11,7 +21,6 @@
     animation: dot 1.3s infinite;
     animation-delay: 0.0s;
 }
-
 .two {
     opacity: 0;
     -webkit-animation: dot 1.3s infinite;
@@ -19,7 +28,6 @@
     animation: dot 1.3s infinite;
     animation-delay: 0.2s;
 }
-
 .three {
     opacity: 0;
     -webkit-animation: dot 1.3s infinite;
@@ -27,7 +35,6 @@
     animation: dot 1.3s infinite;
     animation-delay: 0.3s;
 }
-
 @-webkit-keyframes dot {
     0% {
         opacity: 0;
@@ -39,7 +46,6 @@
         opacity: 1;
     }
 }
-
 @keyframes dot {
     0% {
         opacity: 0;
@@ -52,3 +58,12 @@
     }
 }
 
+/* hide numberic-field arrows */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number] {
+  -moz-appearance: textfield;
+}

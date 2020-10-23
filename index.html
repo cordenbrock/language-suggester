@@ -9,80 +9,85 @@
 </head>
 <body>
     <div class="container">
-        <h1>What language are you?</h1>
-        <br>
+        <header>
+            <h1>What language are you?</h1>
+            <br>
+        </header>
         <!-- Form -->
         <form id="form">
             <!-- Q1 -->
             <div class="form-group">
                 <h3>Q1:</h3> 
-                <label for="q1">On a scale from "totally" to "ehhh", how would you rate </label>
+                <label for="q1">on a scale from "indubitable virtuoso" to "scholastically elite", how would you rate your procrastination skills?</label>
                 <select class="form-control" id="q1">
                     <option disabled selected value> -- select an option -- </option>
-                    <option></option>
-                    <option>2</option>
-                    <option>3</option>
+                    <option>indubitable virtuoso</option>
+                    <option>wait, is this for real?</option>
+                    <option>scholastically elite</option>
                 </select>
             </div>
             <br>
             <!-- Q2 -->
             <div class="form-group">
-                <h3>Q2</h3>
+                <h3>Q2:</h3>
+                <label for="q2">what do you want to be when you grow up?</label>
                 <div class="radio">
                     <label>
-                        <input type="radio" name="radio-1" value="a" checked>
-                        a
+                        <input type="radio" name="radio-1" value="a">
+                        werewolf astronaut
                     </label>
                 </div>
                 <div class="radio">
                     <label>
                         <input type="radio" name="radio-1" value="b">
-                        b
+                        werewolf marine biologist
                     </label>
                 </div>
                 <div class="radio">
                     <label>
                         <input type="radio" name="radio-1" value="c">
-                        c
+                        just a werewolf
                     </label>
                 </div>
             </div>
             <!-- Q3 -->
             <div class="form-group">
-                <h3>Q3</h3>
+                <h3>Q3:</h3>
                 <div class="form-group">
-                    <input id="q3" class="form-control" type="text" value="" placeholder="" maxlength="">
+                    <label for="q3">tell us a little bit about how you became a procrastinating werewolf!</label>
+                    <input id="q3" class="form-control" type="text" value="" placeholder="50-characters-max" maxlength="50">
                 </div>
             </div>
             <!-- Q4 -->
             <div class="form-group">
-                <h3>Q4</h3>
+                <h3>Q4:</h3>
                 <div class="form-group">
-                    <label></label>
+                    <label>choose a number between infinity and non-infinity:</label>
                     <input id="q4" class="form-control" type="number" onkeydown="return event.keyCode !== 69">
                 </div>
             </div>
             <!-- Q5 -->
             <div class="form-group">
-                <h3>Q5</h3>
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="radio-2" value="a" checked>
-                            a
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="radio-2" value="b">
-                            b
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="radio-2" value="c">
-                            c
-                        </label>
-                    </div>
+                <h3>Q5:</h3>
+                <label for="q5">how seriously did you take this quiz?</label>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="radio-2" value="a">
+                        extremely seriously
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="radio-2" value="b">
+                        excessively seriously
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="radio-2" value="c">
+                        seriously seriously
+                    </label>
+                </div>
             </div>
           <input type="submit" value="Submit">
         </form>
@@ -90,8 +95,8 @@
 
     <!-- hidden results -->
     <div class="container">
-        <h3 class="loader" id="loader">Loading<span class="one">.</span><span class="two">.</span><span class="three">.</span>​</h3>
-        <div  id="print-result">
+        <h3 class="loader" id="loader">according to our sophisticated analytics, you are<span class="one">.</span><span class="two">.</span><span class="three">.</span>​</h3>
+        <div  class="print-result" id="print-result">
         </div>
     </div>
 
