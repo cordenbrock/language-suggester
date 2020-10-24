@@ -9,7 +9,7 @@ header {
     margin: auto;
     color: rgb(126, 50, 25);
     font-weight: bolder;
-    text-shadow: 0 0 5px peru;
+    text-shadow: 0 0 3px peru;
 }
 
 input {
