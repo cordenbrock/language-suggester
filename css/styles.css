@@ -1,3 +1,7 @@
+.java {
+    color:blue;
+}
+
 body {
     color: rgb(148, 107, 31);
     font-family: cursive;
@@ -7,7 +11,7 @@ header {
     text-align: center;
     padding: 2rem;
     margin: auto;
-    color: rgb(126, 50, 25);
+    color: rgb(148, 107, 31);
     font-weight: bolder;
     text-shadow: 0 0 3px peru;
 }

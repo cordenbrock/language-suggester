@@ -66,34 +66,39 @@ $(document).ready(() => {
             };
 
         // compile user input into one result 
-            let ansArray, counts, compare, languageResult;
-            ansArray = [ansOne(), ansTwo(), ansThree(), ansFour(), ansFive()]
+            const ansArray = [ansOne(), ansTwo(), ansThree(), ansFour(), ansFive()];    
+            let languageResult;
+            
+            (function(array) {
+            let len, counts, compare;
+            len = array.length
             counts = {};
             compare = 0;
-            
-            (function(array){
-            for (let i = 0, len = array.length; i < len; i++) {
+            for (let i = 0; i < len; i++) {
                 let word = array[i];
-                
+
                 if (counts[word] === undefined) {
                     counts[word] = 1;
                 } else {
-                    counts[word] = counts[word] + 1;
+                    counts[word] += 1;
                 }
+
                 if (counts[word] > compare) {
                         compare = counts[word];
                         languageResult = ansArray[i];
                 }
-                }
+            }
             return languageResult;
             })(ansArray);        
-
         // print result
             $("#form").toggle();
             $("#loader").fadeIn(5000).fadeOut(5000, "swing", printResult);
             function printResult() {
                 $("#print-result").text(`${languageResult}!`);
             }
+            $("#print-result").delay(12000).queue(() => {
+                $(`<h5 class="${languageResult}">click here to learn more</h5>`).appendTo("#print-result");
+            });
         } else {
             alert("whoa tiger! looks like ya forgot a Q!");
         };
