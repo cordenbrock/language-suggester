@@ -4,97 +4,104 @@
     <title>language suggester</title>
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
     <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Henny+Penny&family=Monoton&family=Press+Start+2P&display=swap" rel="stylesheet">
     <script src="js/jquery-3.5.1.js"></script>
     <script src="js/suggester.js"></script>
 </head>
 <body>
-    <div class="container container-custom" id="container-custom">
+    <div>
+        <!-- header -->
         <header>
             <h1>What language are you?</h1>
+            <h5 class="pt-5">Greetings human! Fill out the short questionnaire below to find out which programming language YOU are!</h5>
             <br>
         </header>
-        <!-- Form -->
-        <form id="form">
-            <!-- Q1 -->
-            <div class="form-group">
-                <h3>Q1:</h3> 
-                <label for="q1">on a scale from "indubitable virtuoso" to "scholastically elite", how would you rate your procrastination skills?</label>
-                <select class="form-control" id="q1">
-                    <option disabled selected value>-- select an option -- </option>
-                    <option>indubitable virtuoso</option>
-                    <option>wait, is this for real?</option>
-                    <option>scholastically elite</option>
-                </select>
-            </div>
-            <br>
-            <!-- Q2 -->
-            <div class="form-group">
-                <h3>Q2:</h3>
-                <label for="q2">what do you want to be when you grow up?</label>
-                <div class="radio">
-                    <label>
-                        <input type="radio" name="radio-1" value="a">
-                        werewolf astronaut
-                    </label>
+        <div class="container container-custom">
+            <!-- form -->
+            <form id="form">
+                <!-- Q1 -->
+                <div class="form-group mb-5">
+                    <h3>Q1:</h3> 
+                    <label for="q1">on a scale from "indubitable virtuoso" to "scholastically elite", how would you rate your procrastination skills?</label>
+                    <select class="form-control select-custom" id="q1">
+                        <option disabled selected value>-- select an option -- </option>
+                        <option>indubitable virtuoso</option>
+                        <option>wait, is this for real?</option>
+                        <option>scholastically elite</option>
+                    </select>
                 </div>
-                <div class="radio">
-                    <label>
-                        <input type="radio" name="radio-1" value="b">
-                        werewolf marine biologist
-                    </label>
+                <br>
+                <!-- Q2 -->
+                <div class="form-group mb-5">
+                    <h3>Q2:</h3>
+                    <label for="q2">what do you want to be when you grow up?</label>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="radio-1" value="a">
+                            werewolf astronaut
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="radio-1" value="b">
+                            werewolf marine biologist
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="radio-1" value="c">
+                            just a werewolf
+                        </label>
+                    </div>
                 </div>
-                <div class="radio">
-                    <label>
-                        <input type="radio" name="radio-1" value="c">
-                        just a werewolf
-                    </label>
+                <br>
+                <!-- Q3 -->
+                <div class="form-group mb-5">
+                    <h3>Q3:</h3>
+                    <div class="form-group">
+                        <label for="q3">tell us a little bit about why you want to become a procrastinating werewolf!</label>
+                        <input id="q3" class="form-control" type="text" value="" placeholder="enter text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'enter text'" maxlength="50">
+                    </div>
                 </div>
-            </div>
-            <br>
-            <!-- Q3 -->
-            <div class="form-group">
-                <h3>Q3:</h3>
-                <div class="form-group">
-                    <label for="q3">tell us a little bit about how you became a procrastinating werewolf!</label>
-                    <input id="q3" class="form-control" type="text" value="" placeholder="enter text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'enter text'" maxlength="50">
+                <br>
+                <!-- Q4 -->
+                <div class="form-group mb-5">
+                    <h3>Q4:</h3>
+                    <div class="form-group">
+                        <label>choose a number between infinity and non-infinity:</label>
+                        <input id="q4" class="form-control" type="number" placeholder="enter non-zero number" onfocus="this.placeholder = ''" onblur="this.placeholder = 'enter non-zero number'"  onkeydown="return event.keyCode !== 69">
+                    </div>
                 </div>
-            </div>
-            <br>
-            <!-- Q4 -->
-            <div class="form-group">
-                <h3>Q4:</h3>
-                <div class="form-group">
-                    <label>choose a number between infinity and non-infinity:</label>
-                    <input id="q4" class="form-control" type="number" placeholder="enter non-zero number" onfocus="this.placeholder = ''" onblur="this.placeholder = 'enter non-zero number'"  onkeydown="return event.keyCode !== 69">
+                <br>
+                <!-- Q5 -->
+                <div class="form-group mb-5">
+                    <h3>Q5:</h3>
+                    <label for="q5">how serious did you take this quiz?</label>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="radio-2" value="a">
+                            extremely serious
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="radio-2" value="b">
+                            inordinately serious
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="radio-2" value="c">
+                            seriously serious
+                        </label>
+                    </div>
                 </div>
-            </div>
-            <br>
-            <!-- Q5 -->
-            <div class="form-group">
-                <h3>Q5:</h3>
-                <label for="q5">how serious did you take this quiz?</label>
-                <div class="radio">
-                    <label>
-                        <input type="radio" name="radio-2" value="a">
-                        extremely serious
-                    </label>
-                </div>
-                <div class="radio">
-                    <label>
-                        <input type="radio" name="radio-2" value="b">
-                        inordinately serious
-                    </label>
-                </div>
-                <div class="radio">
-                    <label>
-                        <input type="radio" name="radio-2" value="c">
-                        seriously serious
-                    </label>
-                </div>
-            </div>
-            <br>
-          <input class="input-custom" type="submit" value="get results">
-        </form>
+                <br>
+            <input class="submit-custom" type="submit" value="get results">
+            </form>
+        </div>
+
+
     </div>
 
     <!-- hidden results -->

@@ -92,8 +92,9 @@ $(document).ready(() => {
             })(ansArray);
 
         // print result
+            $("h5").toggle();
             $("#form").toggle();
-            $("#container-custom").toggleClass();
+            $(".container-custom").toggleClass();
 
             function printResult() {
                 $("#print-result").html(`<p>${languageResult}!</p>`);
