@@ -1,15 +1,32 @@
+:root {
+    --bluish: rgb(53, 145, 221);
+    --orangish: rgb(251, 182, 53);
+}
+
 body {
-    color: rgb(148, 107, 31);
+    color: var(--orangish);
     font-family: cursive;
+    background: url(../img/san-jacinto.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 header {
     text-align: center;
-    padding: 2rem;
+    padding: 1rem;
     margin: 2rem auto;
-    color: rgb(148, 107, 31);
+    color: rgb(219, 157, 41);
     font-weight: bolder;
-    text-shadow: 0 0 3px peru;
+    text-shadow: 0 0 2.5px black;
+}
+
+.container-custom {
+    background: rgba(0, 0, 0, 0.39);
+    border-radius: 8px;
+    margin: 3rem auto;
+    max-width: 65%;
 }
 
 h3 {
@@ -19,46 +36,47 @@ h3 {
     padding: .5rem
 }
 
-input {
-    background-color: rgba(205, 134, 63, 0.808);
-    border-radius: 8px;
-    box-shadow: purple;
+input, select {
+    max-width: 50%;
+}
+
+.input-custom {
+    background: none;
+    text-decoration: none;
+    color:rgba(205, 134, 63, 0.698);
+    box-shadow: 0 0 2px white;
+    margin: 1rem auto;
+    padding: .5rem;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+}
+
+input::placeholder {
+    font-size: x-small;
 }
 
 .print-result {
     font-size: 10rem;
     text-align: center;
-    color: peru
+    color: peru;
+    text-shadow: 0 0 3rem white;
 }
-
-/* .btn-custom {
-    width: 12%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 3px solid rgb(223, 179, 135);
-    margin: 1rem auto;
-    background-color: transparent;
-    color: rgb(148, 107, 31);
-} */
 
 a.btn-custom {
     -webkit-appearance: button;
     -moz-appearance: button;
     appearance: button;
-
     text-decoration: none;
-    color: rgb(148, 107, 31);
-    border: 3px solid rgb(223, 179, 135);
+    color:peru;
+    box-shadow: 0 0 .2rem rgb(175, 222, 253);
     margin: .75rem;
 }
 
-.btn-custom:hover {
-    background: wheat;
-    color: peru;
+.input-custom:hover, .btn-custom:hover {
+    background: rgba(205, 134, 63, 0.911);
+    color:black;
 }
-
-
 
 /* loader animation */
 .loader {
@@ -110,7 +128,7 @@ a.btn-custom {
     }
 }
 
-/* hide numberic-field arrows */
+/* hide numeric-field arrows */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
