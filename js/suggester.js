@@ -77,28 +77,46 @@ $(document).ready(() => {
             for (let i = 0; i < len; i++) {
                 let word = array[i];
 
-                if (counts[word] === undefined) {
-                    counts[word] = 1;
+                if (counts.word === undefined) {
+                    counts.word = 1;
                 } else {
-                    counts[word] += 1;
+                    counts.word += 1;
                 }
 
-                if (counts[word] > compare) {
-                        compare = counts[word];
+                if (counts.word > compare) {
+                        compare = counts.word;
                         languageResult = ansArray[i];
                 }
             }
             return languageResult;
-            })(ansArray);        
+            })(ansArray);
+
         // print result
             $("#form").toggle();
-            $("#loader").fadeIn(5000).fadeOut(5000, "swing", printResult);
+
             function printResult() {
-                $("#print-result").text(`${languageResult}!`);
-            }
+                $("#print-result").html(`<p>${languageResult}!</p>`);
+            };
+
+            $("#loader").fadeIn(5000).fadeOut(5000, "swing", printResult);
+
+            const learnMoreBtn = (() => {
+                if (languageResult === "java") {
+                    return "https://en.wikipedia.org/wiki/Java_(programming_language)";
+                } else if (languageResult === "python") {
+                    return "https://en.wikipedia.org/wiki/Python_(programming_language)"
+                } else if (languageResult === "cobol") {
+                    return "https://en.wikipedia.org/wiki/COBOL"
+                } else {
+                    return alert("it would appear as if a 404 thing occured");
+                };
+            })();
+
             $("#print-result").delay(12000).queue(() => {
-                $(`<h5 class="${languageResult}">click here to learn more</h5>`).appendTo("#print-result");
+                $("#print-result").append(`<a href="${learnMoreBtn}" target="_blank" class="btn btn-custom">learn more</a>`);
+                $("#print-result").append(`<a href="/" class="btn btn-custom">retake quiz</a>`);
             });
+
         } else {
             alert("whoa tiger! looks like ya forgot a Q!");
         };
