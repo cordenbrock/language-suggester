@@ -93,6 +93,7 @@ $(document).ready(() => {
 
         // print result
             $("#form").toggle();
+            $("#container-custom").toggleClass();
 
             function printResult() {
                 $("#print-result").html(`<p>${languageResult}!</p>`);
@@ -114,7 +115,7 @@ $(document).ready(() => {
 
             $("#print-result").delay(12000).queue(() => {
                 $("#print-result").append(`<a href="${learnMoreBtn}" target="_blank" class="btn btn-custom">learn more</a>`);
-                $("#print-result").append(`<a href="/" class="btn btn-custom">retake quiz</a>`);
+                $("#print-result").append(`<a href="https://cordenbrock.github.io/language-suggester/" class="btn btn-custom">retake quiz</a>`);
             });
 
         } else {
