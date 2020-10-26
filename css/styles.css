@@ -1,5 +1,5 @@
 :root {
-    --bluish: rgb(53, 145, 221);
+    --bluish: rgb(175, 222, 253);
     --orangish: rgb(251, 182, 53);
     --cpu-font: 'Press Start 2P', cursive;
     --monoton: 'Monoton', cursive;
@@ -20,15 +20,29 @@ header {
     text-align: center;
     padding: 1rem;
     margin: 2rem auto;
-    color: var(--orangish);
+    color: peru;
     font-weight: bolder;
     text-shadow: 0 0 2.5px black;
 }
 
+h1 {
+    font-size: 4rem;
+    font-family: var(--monoton);
+    text-shadow: 0 0 1rem black;
+}
+
+h3 {
+    font-family: var(--monoton);
+    font-size: 3rem;
+    color: peru;
+    text-shadow: 0 0 3px black;
+    padding: .5rem
+}
+
 h5 {
     font-size: .75rem;
-    color: peru;
-    text-shadow: 0 0 .5rem black;
+    color: var(--orangish);
+    text-shadow: 0 0 .2rem black;
 }
 
 .container-custom {
@@ -40,32 +54,13 @@ h5 {
     font-size: .75rem;
 }
 
-h1 {
-    font-size: 4rem;
-    font-family: var(--monoton);
-    text-shadow: 0 0 2rem black;
-}
-
-h3 {
-    font-family: var(--monoton);
-    font-size: 3rem;
-    color: peru;
-    text-shadow: 0 0 3px black;
-    padding: .5rem
-}
-
 input, select {
     max-width: 50%;
 }
 
 .select-custom {
     font-size: .75rem;
-    text-align: center;
-    text-align-last: center;
 }
-option {
-    text-align: left;
-  }
 
 .submit-custom {
     font-family: var(--monoton);
@@ -89,8 +84,8 @@ input::placeholder {
     font-family: var(--monoton);
     font-size: 10rem;
     text-align: center;
-    color: peru;
-    text-shadow: 0 0 3rem white;
+    color: var(--orangish);
+    text-shadow: 0 0 2rem var(--bluish);
 }
 
 a.btn-custom {
@@ -98,8 +93,9 @@ a.btn-custom {
     -moz-appearance: button;
     appearance: button;
     color:var(--orangish);
-    box-shadow: 0 0 .2rem rgb(175, 222, 253);
+    box-shadow: 0 0 .2rem var(--bluish);
     margin: .75rem;
+    background-color: rgba(255, 255, 255, 0.15);
 }
 
 .submit-custom:hover, .btn-custom:hover {
@@ -112,7 +108,7 @@ a.btn-custom {
     font-family: var(--cpu-font);
     display: none;
     text-align: center;
-    color: peru
+    color: var(--orangish);
 }
 .one {
     opacity: 0;
